@@ -17,32 +17,7 @@ import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
 import { homeData } from "../../DummyData/data";
 
-const drawerWidth = 240;
 const navItems = ["Home", "About", "Contact"];
-
-// Styled component for the Drawer with additional animation
-const AnimatedDrawer = styled(Drawer)(({ theme }) => ({
-  "& .MuiDrawer-paper": {
-    boxSizing: "border-box",
-    width: drawerWidth,
-    transform: "translateX(-100%)",
-    transition: "transform 0.5s ease-out, opacity 0.3s ease-out",
-    opacity: 0,
-    "&.MuiDrawer-paperAnchorDockedLeft": {
-      borderRight: 0,
-    },
-  },
-  "& .MuiBackdrop-root": {
-    transition: "opacity 0.3s ease-out",
-  },
-  "&[open] .MuiDrawer-paper": {
-    transform: "translateX(0)",
-    opacity: 1,
-  },
-  "&[open] .MuiBackdrop-root": {
-    opacity: 1,
-  },
-}));
 
 // Styled component for ListItemButton to add scale animation
 const AnimatedListItemButton = styled(ListItemButton)(({ theme }) => ({
@@ -126,7 +101,7 @@ function DrawerAppBar(props) {
         </Toolbar>
       </AppBar>
       <nav>
-        <AnimatedDrawer
+        <Drawer
           container={container}
           variant="temporary"
           open={mobileOpen}
@@ -139,7 +114,7 @@ function DrawerAppBar(props) {
           }}
         >
           {drawer}
-        </AnimatedDrawer>
+        </Drawer>
       </nav>
       {/* <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
