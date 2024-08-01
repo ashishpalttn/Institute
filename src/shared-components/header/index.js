@@ -16,6 +16,8 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
 import { homeData } from "../../DummyData/data";
+import { styled } from "@mui/material/styles";
+import { homeData } from "../../DummyData/data";
 
 const navItems = ["Home", "About", "Contact"];
 
@@ -54,13 +56,16 @@ function DrawerAppBar(props) {
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
         {homeData.header.instituteName}
+        {homeData.header.instituteName}
       </Typography>
       <Divider />
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
             <AnimatedListItemButton sx={{ textAlign: "center" }}>
+            <AnimatedListItemButton sx={{ textAlign: "center" }}>
               <ListItemText primary={item} />
+            </AnimatedListItemButton>
             </AnimatedListItemButton>
           </ListItem>
         ))}
@@ -82,6 +87,7 @@ function DrawerAppBar(props) {
             edge="start"
             onClick={handleDrawerToggle}
             sx={{ mr: 1, display: { sm: "none" } }}
+            sx={{ mr: 1, display: { sm: "none" } }}
           >
             <MenuIcon />
           </IconButton>
@@ -89,25 +95,30 @@ function DrawerAppBar(props) {
             variant="h6"
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "flex" } }}
+            sx={{ flexGrow: 1, display: { xs: "none", sm: "flex" } }}
           >
+            {homeData.header.instituteName}
             {homeData.header.instituteName}
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
               <AnimatedButton key={item} sx={{ color: "#fff" }}>
+              <AnimatedButton key={item} sx={{ color: "#fff" }}>
                 {item}
+              </AnimatedButton>
               </AnimatedButton>
             ))}
           </Box>
         </Toolbar>
       </AppBar>
       <nav>
-        <Drawer
+        <AnimatedDrawer
           container={container}
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
+            keepMounted: true,
             keepMounted: true,
           }}
           sx={{
@@ -115,13 +126,15 @@ function DrawerAppBar(props) {
           }}
         >
           {drawer}
-        </Drawer>
+        </AnimatedDrawer>
       </nav>
+      {/* <Box component="main" sx={{ p: 3 }}>
       {/* <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
         <Typography>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
         </Typography>
+      </Box> */}
       </Box> */}
     </Box>
   );
