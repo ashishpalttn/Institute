@@ -14,9 +14,57 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import { styled } from "@mui/material/styles";
+import { homeData } from "../../DummyData/data";
 
 const drawerWidth = 240;
 const navItems = ["Home", "About", "Contact"];
+
+// Styled component for the Drawer with additional animation
+const AnimatedDrawer = styled(Drawer)(({ theme }) => ({
+  "& .MuiDrawer-paper": {
+    boxSizing: "border-box",
+    width: drawerWidth,
+    transform: "translateX(-100%)",
+    transition: "transform 0.5s ease-out, opacity 0.3s ease-out",
+    opacity: 0,
+    "&.MuiDrawer-paperAnchorDockedLeft": {
+      borderRight: 0,
+    },
+  },
+  "& .MuiBackdrop-root": {
+    transition: "opacity 0.3s ease-out",
+  },
+  "&[open] .MuiDrawer-paper": {
+    transform: "translateX(0)",
+    opacity: 1,
+  },
+  "&[open] .MuiBackdrop-root": {
+    opacity: 1,
+  },
+}));
+
+// Styled component for ListItemButton to add scale animation
+const AnimatedListItemButton = styled(ListItemButton)(({ theme }) => ({
+  transition: "transform 0.3s ease-out",
+  "&:hover": {
+    transform: "scale(2.05)",
+  },
+}));
+
+// Styled component for Button with hover and focus effects
+const AnimatedButton = styled(Button)(({ theme }) => ({
+  transition: "transform 0.3s ease-out, color 0.3s ease-out",
+  "&:hover": {
+    transform: "scale(1.2)",
+    color: theme.palette.primary.light,
+  },
+  "&:focus": {
+    outline: "none",
+    transform: "scale(1.2)",
+    color: theme.palette.primary.light,
+  },
+}));
 
 function DrawerAppBar(props) {
   const { window } = props;
@@ -29,15 +77,15 @@ function DrawerAppBar(props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+        {homeData.header.instituteName}
       </Typography>
       <Divider />
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
+            <AnimatedListItemButton sx={{ textAlign: "center" }}>
               <ListItemText primary={item} />
-            </ListItemButton>
+            </AnimatedListItemButton>
           </ListItem>
         ))}
       </List>
@@ -57,61 +105,53 @@ function DrawerAppBar(props) {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
+            sx={{ mr: 1, display: { sm: "none" } }}
           >
             <MenuIcon />
           </IconButton>
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+            sx={{ flexGrow: 1, display: { xs: "none", sm: "flex" } }}
           >
-            MUI
+            {homeData.header.instituteName}
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: "#fff" }}>
+              <AnimatedButton key={item} sx={{ color: "#fff" }}>
                 {item}
-              </Button>
+              </AnimatedButton>
             ))}
           </Box>
         </Toolbar>
       </AppBar>
       <nav>
-        <Drawer
+        <AnimatedDrawer
           container={container}
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true,
           }}
           sx={{
             display: { xs: "block", sm: "none" },
-            "& .MuiDrawer-paper": {
-              boxSizing: "border-box",
-              width: drawerWidth,
-            },
           }}
         >
           {drawer}
-        </Drawer>
+        </AnimatedDrawer>
       </nav>
-      <Box component="main" sx={{ p: 3 }}>
+      {/* <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
         <Typography>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
         </Typography>
-      </Box>
+      </Box> */}
     </Box>
   );
 }
 
 DrawerAppBar.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
   window: PropTypes.func,
 };
 
