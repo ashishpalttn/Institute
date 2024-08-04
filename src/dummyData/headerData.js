@@ -10,7 +10,7 @@ export const homePageData = {
         {name:"RESULTS", url:'/about'},
         {name:"GALLERY", url:'/about'},
         {name:"BLOG", url:'/about'},
-        {name:"ONLINE ADMISSION",}
+        {name:"ONLINE ADMISSION",url:'/about'}
       ],
   },
  

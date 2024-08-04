@@ -4,7 +4,7 @@ import { AppBar, Toolbar, IconButton, Typography, Box, Button } from "@mui/mater
 import MenuIcon from "@mui/icons-material/Menu";
 import { styled } from "@mui/material/styles";
 import { Link } from "react-router-dom";
-import { homePageData } from "../../dummyData/homePageData";
+import { homePageData } from "../../dummyData/headerData";
 
 // Styled component for Button with hover and focus effects
 const AnimatedButton = styled(Button)(({ theme }) => ({

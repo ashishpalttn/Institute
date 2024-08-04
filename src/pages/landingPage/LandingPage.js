@@ -1,19 +1,20 @@
-import { Box, CssBaseline, Drawer, Toolbar } from "@mui/material";
+import { Box, CssBaseline, Toolbar } from "@mui/material";
 import React from "react";
-import DrawerAppBar from "../../shared-components/header";
-import HomePage from "../homePage/HomePage";
+import Header from "../../shared-components/header/HeaderComponent";
 import { Outlet } from "react-router-dom";
+import Footer from "../../shared-components/footer/FooterComponent";
+
 
 export const LandingPage = (props) => {
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: "block" }}>
       <CssBaseline />
-      <DrawerAppBar />
-      <Box component="main" sx={{ p: 3 }}>
+      <Header />
+      <Box component="main" sx={{ p: 3 ,display:'block'}}>
         <Toolbar />
-        {/* <HomePage /> */}
         <Outlet/>
       </Box>
+      <Box sx={{display:"block",}}><Footer/></Box>
     </Box>
   );
 };

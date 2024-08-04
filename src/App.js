@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
-import DrawerAppBar from './shared-components/header';
+import DrawerAppBar from './shared-components/header/HeaderComponent';
 // import Header from './shared-components/header/header2';
 import { RouterProvider } from 'react-router-dom';
 import { router } from './config/routesConfig';

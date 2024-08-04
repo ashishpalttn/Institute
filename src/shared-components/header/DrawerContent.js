@@ -3,7 +3,7 @@ import React from "react";
 import { Box, Typography, Divider, List, ListItem, ListItemButton, ListItemText } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Link } from "react-router-dom";
-import { homePageData } from "../../dummyData/homePageData";
+import { homePageData } from "../../dummyData/headerData";
 import { renderNavItems } from "./NavBar";
 
 // Styled component for ListItemButton to add scale animation
