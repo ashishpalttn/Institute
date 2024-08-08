@@ -1,19 +1,24 @@
-// src/components/HomePage.js
-import React from 'react';
+import React from "react";
+import { CarouselComponent } from "../../shared-components/carousel/CarouselComponent";
 
 const HomePage = () => {
   return (
-    <div className="bg-gray-100 py-10">
+    <div className="bg-gray-100 pb-2">
+      <CarouselComponent autoSlide={true} autoSlideInterval={3000}/>
       <div className="container mx-auto px-4">
         <header className="text-center mb-12">
-          <h1 className="text-5xl font-bold mb-4">Welcome to ABC Coaching Center</h1>
+          <h1 className="text-3xl lg:text-5xl font-bold mb-4">
+            Welcome to ABC Coaching Center
+          </h1>
           <p className="text-lg text-gray-700">
             Empowering students to achieve their academic goals.
           </p>
         </header>
 
         <section className="mb-12">
-          <h2 className="text-3xl font-semibold mb-6 text-center">Our Courses</h2>
+          <h2 className="text-3xl font-semibold mb-6 text-center">
+            Our Courses
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             <div className="bg-white shadow-md rounded-lg p-6">
               <h3 className="text-2xl font-bold mb-4">Mathematics</h3>
@@ -38,15 +43,12 @@ const HomePage = () => {
             </div>
             <div className="bg-white shadow-md rounded-lg p-6">
               <h3 className="text-2xl font-bold mb-4">History</h3>
-              <p>
-                Explore the past with our comprehensive history courses.
-              </p>
+              <p>Explore the past with our comprehensive history courses.</p>
             </div>
             <div className="bg-white shadow-md rounded-lg p-6">
               <h3 className="text-2xl font-bold mb-4">Geography</h3>
               <p>
-                Understand the world better with our detailed geography
-                courses.
+                Understand the world better with our detailed geography courses.
               </p>
             </div>
             <div className="bg-white shadow-md rounded-lg p-6">
@@ -60,7 +62,9 @@ const HomePage = () => {
         </section>
 
         <section className="mb-12">
-          <h2 className="text-3xl font-semibold mb-6 text-center">Testimonials</h2>
+          <h2 className="text-3xl font-semibold mb-6 text-center">
+            Testimonials
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div className="bg-white shadow-md rounded-lg p-6">
               <p>
@@ -80,9 +84,14 @@ const HomePage = () => {
         </section>
 
         <section className="mb-12">
-          <h2 className="text-3xl font-semibold mb-6 text-center">Contact Us</h2>
+          <h2 className="text-3xl font-semibold mb-6 text-center">
+            Contact Us
+          </h2>
           <div className="bg-white shadow-md rounded-lg p-6">
-            <p>If you have any questions or would like to enroll, please contact us:</p>
+            <p>
+              If you have any questions or would like to enroll, please contact
+              us:
+            </p>
             <p className="mt-4">
               <span className="font-bold">Email:</span> info@abccoaching.com
             </p>
@@ -90,7 +99,8 @@ const HomePage = () => {
               <span className="font-bold">Phone:</span> (123) 456-7890
             </p>
             <p>
-              <span className="font-bold">Address:</span> 123 Main St, Anytown, USA
+              <span className="font-bold">Address:</span> 123 Main St, Anytown,
+              USA
             </p>
           </div>
         </section>

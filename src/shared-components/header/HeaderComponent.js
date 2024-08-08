@@ -5,7 +5,6 @@ import { Box, CssBaseline, Drawer } from "@mui/material";
 import NavBar from "./NavBar";
 import DrawerContent from "./DrawerContent";
 
-const drawerWidth = 240;
 
 function DrawerAppBar(props) {
   const { window } = props;

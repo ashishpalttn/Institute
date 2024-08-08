@@ -1,6 +1,6 @@
 // src/components/DrawerContent.js
 import React from "react";
-import { Box, Typography, Divider, List, ListItem, ListItemButton, ListItemText } from "@mui/material";
+import { Box, Typography, Divider, List, ListItemButton } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Link } from "react-router-dom";
 import { homePageData } from "../../dummyData/headerData";
