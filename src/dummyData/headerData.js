@@ -2,15 +2,15 @@ export const homePageData = {
   header: {
     instituteName: "Saraswati Vidhya Mandir",
     navItems: [
-        {name:"HOME", url:'/home'},
-        {name:"ABOUT US", url:'/about'},
-        {name:"CONTECT", url:'/contact-us'},
-        {name:"BRANCHES", url:'/branches'},
-        {name:"COURSES", url:'/about'},
-        {name:"RESULTS", url:'/about'},
-        {name:"GALLERY", url:'/about'},
-        {name:"BLOG", url:'/about'},
-        {name:"ONLINE ADMISSION",url:'/about'}
+        {name:"Home", url:'/home', icon:'home'},
+        {name:"About Us", url:'/about', icon:'about'},
+        {name:"Contacts", url:'/contact-us', icon:'contact'},
+        {name:"Branches", url:'/branches', icon:'home'},
+        {name:"Courses", url:'/about', icon:'home'},
+        {name:"Results", url:'/about', icon:'home'},
+        {name:"Gallery", url:'/about', icon:'home'},
+        {name:"Blog", url:'/about', icon:'home'},
+        {name:"Admission",url:'/about', icon:'home'}
       ],
   },
  
