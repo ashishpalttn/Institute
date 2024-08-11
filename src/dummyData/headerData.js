@@ -1,6 +1,6 @@
-export const homePageData = {
-  header: {
+export const headerData = {
     instituteName: "Saraswati Vidhya Mandir",
+    logo:'/logo192.png',
     navItems: [
         {name:"Home", url:'/home', icon:'home'},
         {name:"About Us", url:'/about', icon:'about'},
@@ -12,6 +12,4 @@ export const homePageData = {
         {name:"Blog", url:'/about', icon:'home'},
         {name:"Admission",url:'/about', icon:'home'}
       ],
-  },
- 
-};
+  }

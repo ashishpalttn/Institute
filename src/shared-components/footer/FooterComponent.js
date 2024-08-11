@@ -71,6 +71,9 @@ const Footer = () => {
           <Typography variant="body2" align="center">
             {footerData.copyright.replace("{year}", currentYear)}
           </Typography>
+          <Typography variant="body2" align="center">
+            Designed and Developed by Ashish Pal
+          </Typography>
         </Box>
       </Container>
     </FooterContainer>

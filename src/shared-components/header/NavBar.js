@@ -4,7 +4,7 @@ import { AppBar, Toolbar, IconButton, Typography, Box, Button } from "@mui/mater
 import MenuIcon from "@mui/icons-material/Menu";
 import { styled } from "@mui/material/styles";
 import { Link } from "react-router-dom";
-import { homePageData } from "../../dummyData/headerData";
+import { headerData } from "../../dummyData/headerData";
 
 // Styled component for Button with hover and focus effects
 const AnimatedButton = styled(Button)(({ theme }) => ({
@@ -40,15 +40,19 @@ const NavBar = ({ handleDrawerToggle }) => {
         >
           <MenuIcon />
         </IconButton>
+        <img src={`${process.env.PUBLIC_URL}${headerData.logo}`} className="w-8 h-8 mr-2" alt="Logo" />
+
         <Typography
-          variant="h6"
+          variant="h5"
           component="div"
           sx={{ flexGrow: 1, display: { xs: "none", sm: "flex" } }}
+          className="font-bold"
         >
-          {homePageData.header.instituteName}
+          {headerData.instituteName}
         </Typography>
+    
         <Box sx={{ display: { xs: "none", sm: "block" } }}>
-          {renderNavItems(homePageData.header.navItems, AnimatedButton, Link)}
+          {renderNavItems(headerData.navItems, AnimatedButton, Link)}
         </Box>
       </Toolbar>
     </AppBar>

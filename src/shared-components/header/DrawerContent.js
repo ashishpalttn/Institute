@@ -3,7 +3,7 @@ import React from "react";
 import { Box, Typography, Divider, List, ListItemButton } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Link } from "react-router-dom";
-import { homePageData } from "../../dummyData/headerData";
+import { headerData } from "../../dummyData/headerData";
 import drawerHeaderImage from '../../assets/drawer-header-image.jpg';
 import HomeTwoToneIcon from '@mui/icons-material/HomeTwoTone';
 import CallTwoToneIcon from '@mui/icons-material/CallTwoTone';
@@ -41,7 +41,7 @@ const DrawerContent = ({ handleDrawerToggle }) => {
         
       <Divider />
       <List>
-        {renderNavItems(homePageData.header.navItems, AnimatedListItemButton, Link)}
+        {renderNavItems(headerData.navItems, AnimatedListItemButton, Link)}
       </List>
     </Box>
   );
