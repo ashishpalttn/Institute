@@ -26,4 +26,19 @@ export const homePageData = {
       alt: "image 3",
     },
   ],
+  courses: [
+    { title: "Mathematics", description: "Comprehensive math courses designed to help students excel in their studies." },
+    { title: "Science", description: "Engaging science courses that cover the fundamentals and advanced topics." },
+    { title: "English", description: "Enhance your language skills with our expert-led English courses." },
+    { title: "History", description: "Explore the past with our comprehensive history courses." },
+    { title: "Geography", description: "Understand the world better with our detailed geography courses." },
+    { title: "Computer Science", description: "Learn the latest in technology with our computer science courses." },
+  ],
+  testimonials: [
+    { text: "\"ABC Coaching Center has transformed my academic journey. The teachers are amazing and the courses are top-notch!\"", author: "Student A" },
+    { text: "\"I have improved so much since joining ABC Coaching Center. Highly recommend to anyone looking to excel.\"", author: "Student B" },
+    { text: "\"I have improved so much since joining ABC Coaching Center. Highly recommend to anyone looking to excel.\"", author: "Student B" },
+    { text: "\"I have improved so much since joining ABC Coaching Center. Highly recommend to anyone looking to excel.\"", author: "Student B" },
+    
+  ],
 };

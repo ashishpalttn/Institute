@@ -2,7 +2,7 @@ import { Card } from "@mui/material"
 export const CustomCard = ({children})=>{
     return(
         <Card
-        className="transition-transform duration-500 hover:scale-105 hover:shadow-xl"
+        className="transition-transform duration-500 hover:scale-105 hover:shadow-xl "
         sx={{
           height: '100%',
           display: 'flex',
