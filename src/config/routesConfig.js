@@ -5,6 +5,8 @@ import HomePage from "../pages/homePage/HomePage";
 import { LandingPage } from "../pages/landingPage/LandingPage";
 import ContactUsPage from "../pages/contectUsPage/ContectUsPage";
 import BranchesPage from "../pages/branchesPage/BranchesPage";
+import CoursesPage from "../pages/courses/CoursesPage";
+
 
 
 export const router = createBrowserRouter([
@@ -32,6 +34,10 @@ export const router = createBrowserRouter([
       {
         path: "/branches",
         element: <BranchesPage />,
+      },
+      {
+        path: "/courses",
+        element: <CoursesPage />,
       },
     ],
   },

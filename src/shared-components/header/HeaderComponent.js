@@ -3,7 +3,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Box, CssBaseline, Drawer } from "@mui/material";
 import NavBar from "./NavBar";
-import DrawerContent from "./DrawerContent";
+import DrawerContent from "./MobileDrawer";
 
 
 function DrawerAppBar(props) {
