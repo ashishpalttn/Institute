@@ -6,7 +6,11 @@ import { LandingPage } from "../pages/landingPage/LandingPage";
 import ContactUsPage from "../pages/contectUsPage/ContectUsPage";
 import BranchesPage from "../pages/branchesPage/BranchesPage";
 import CoursesPage from "../pages/courses/CoursesPage";
-
+import GalleryPage from "../pages/galleryPage/GalleryPage";
+import BlogPage from "../pages/blogPage/BlogPage";
+import ResultsPage from "../pages/resultPage/ResultPage";
+import AdmissionPage from "../pages/admissionPage/AdmissionPage";
+import TeachersPage from "../pages/teachersPage/TeachersPage";
 
 
 export const router = createBrowserRouter([
@@ -39,6 +43,26 @@ export const router = createBrowserRouter([
         path: "/courses",
         element: <CoursesPage />,
       },
+      {
+        path: "/gallery",
+        element: <GalleryPage />,
+      },
+      {
+        path: "/blog",
+        element: <BlogPage/>
+      },
+      {
+        path: "/result",
+        element: <ResultsPage/>
+      },
+      {
+        path: "/admission",
+        element: <AdmissionPage/>
+      },
+      {
+        path: "/teachers",
+        element: <TeachersPage/>
+      }
     ],
   },
   {
