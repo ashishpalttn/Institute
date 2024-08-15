@@ -28,8 +28,9 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <FooterContainer>
-      <Container maxWidth="lg">
+    // <FooterContainer>
+    <Box className="bg-primary-700 py-16 text-white-700">
+      <Container className="" maxWidth="lg">
         <Grid container spacing={4}>
           <Grid item xs={12} sm={4}>
             <Typography variant="h6" gutterBottom>
@@ -76,7 +77,8 @@ const Footer = () => {
           </Typography>
         </Box>
       </Container>
-    </FooterContainer>
+      </Box>
+    //  </FooterContainer>
   );
 };
 

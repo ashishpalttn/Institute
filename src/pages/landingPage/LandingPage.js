@@ -14,7 +14,7 @@ export const LandingPage = (props) => {
         <Toolbar />
         <Outlet/>
       </Box>
-      <Box sx={{display:"block",}}><Footer/></Box>
+    <Footer/>
     </Box>
   );
 };

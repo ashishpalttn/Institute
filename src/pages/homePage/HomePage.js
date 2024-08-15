@@ -7,7 +7,7 @@ import CoursesPage, { RenderCourses } from "../courses/CoursesPage";
 
 const HomePage = () => {
   return (
-    <div className="bg-gray-100 pb-2">
+    <div className="bg-primary-50 pb-2">
       <CarouselComponent
         data={homePageData.carouselData}
         autoSlide={true}
