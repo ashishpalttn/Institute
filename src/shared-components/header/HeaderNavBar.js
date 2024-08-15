@@ -15,6 +15,8 @@ import { Link } from "react-router-dom";
 import { headerData } from "../../dummyData/headerData";
 import MailIcon from "@mui/icons-material/Mail";
 import ThemeToggle from "../ThemeToggleBtn";
+import LanguageSwitcher from "../LanguageSwitcher";
+
 
 // Styled component for Button with hover and focus effects
 const AnimatedButton = styled(Button)(({ theme }) => ({
@@ -47,7 +49,7 @@ const NavBar = ({ handleDrawerToggle }) => {
   return (
     <AppBar component="nav">
       <Toolbar className="bg-primary-700 text-white">
-        {/* <IconButton
+        <IconButton
           color="inherit"
           aria-label="open drawer"
           edge="start"
@@ -55,10 +57,10 @@ const NavBar = ({ handleDrawerToggle }) => {
           sx={{ mr: 2, display: { sm: "none" } }}
         >
           <MenuIcon />
-        </IconButton> */}
+        </IconButton>
         <img
           src={`${process.env.PUBLIC_URL}${headerData.logo}`}
-          className="w-8 h-8 mr-2"
+          className="w-7 h-7 mr-2"
           alt="Logo"
         />
 
@@ -73,11 +75,14 @@ const NavBar = ({ handleDrawerToggle }) => {
 
         <Box sx={{ display: { xs: "none", sm: "block" } }}>
           {/* <ThemeToggle /> */}
-          <Badge badgeContent={1} color="primary">
-            <MailIcon color="white" />
-          </Badge>
+         
+        
           {renderNavItems(headerData.navItems, AnimatedButton, Link)}
         </Box>
+        <LanguageSwitcher/>
+        <Badge badgeContent={1} color="primary">
+            <MailIcon color="white" />
+          </Badge>
       </Toolbar>
     </AppBar>
   );

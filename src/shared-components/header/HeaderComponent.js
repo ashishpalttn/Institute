@@ -2,7 +2,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Box, CssBaseline, Drawer } from "@mui/material";
-import NavBar from "./NavBar";
+import NavBar from "./HeaderNavBar";
 import DrawerContent from "./MobileDrawer";
 
 
