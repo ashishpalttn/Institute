@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { CarouselComponent } from "../../shared-components/carousel/CarouselComponent";
 import { homePageData } from "../../dummyData/homePageData";
 import Section from "../../shared-components/Section";
 import { CustomCard } from "../../shared-components/CustomCard";
 import CoursesPage, { RenderCourses } from "../courses/CoursesPage";
 import { useTranslation } from "react-i18next";
+import { getSheetDBData } from "../../dummyData/sheetDb/sheetDb";
 
 
 const HomePage = () => {
+  useEffect(()=>{
+    // getSheetDBData()
+  },[])
   const {t} = useTranslation();
   return (
     <div className="bg-primary-50 pb-2">

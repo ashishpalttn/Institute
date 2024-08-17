@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { styled } from "@mui/material/styles";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { headerData } from "../../dummyData/headerData";
 import MailIcon from "@mui/icons-material/Mail";
 import ThemeToggle from "../ThemeToggleBtn";
@@ -46,6 +46,7 @@ export const renderNavItems = (navItems, ButtonComponent, LinkComponent) => {
 };
 
 const NavBar = ({ handleDrawerToggle }) => {
+  const navigate = useNavigate();
   return (
     <AppBar component="nav">
       <Toolbar className="bg-primary-700 text-white">
@@ -80,7 +81,7 @@ const NavBar = ({ handleDrawerToggle }) => {
           {renderNavItems(headerData.navItems, AnimatedButton, Link)}
         </Box>
         <LanguageSwitcher/>
-        <Badge badgeContent={1} color="primary">
+        <Badge onClick={()=>navigate('./event')} badgeContent={1} color="primary">
             <MailIcon color="white" />
           </Badge>
       </Toolbar>
