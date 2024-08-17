@@ -35,7 +35,7 @@ const EventsPage = () => {
 
     const handleOnClick = (formUrl) => {
     //    const formUrl = 'https://docs.google.com/forms/d/1jLR9L2pLJXYepb4ffC0iSKibM6mmnU8Pj64ZODs7ab8/edit'
-       window.open(formUrl, '_black')
+       window.location.href= formUrl
     }
     //   if(sheetData){
     //     return (
