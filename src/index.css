@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.min-h-screen-minus-50px {
+  min-height: calc(21vw);
+}
+
 :root {
   --bg-color: #ffffff; 
   --text-color: #000000;

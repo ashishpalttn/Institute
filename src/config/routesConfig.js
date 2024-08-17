@@ -12,6 +12,7 @@ import ResultsPage from "../pages/resultPage/ResultPage";
 import AdmissionPage from "../pages/admissionPage/AdmissionPage";
 import TeachersPage from "../pages/teachersPage/TeachersPage";
 import EventsPage from "../pages/eventPage/EventPage";
+import AlumniPage from "../pages/AlumniStudentPage";
 
 
 export const router = createBrowserRouter([
@@ -67,6 +68,10 @@ export const router = createBrowserRouter([
       {
         path: "/event",
         element: <EventsPage/>
+      },
+      {
+        path: '/alumni',
+        element: <AlumniPage/>
       }
     ],
   },

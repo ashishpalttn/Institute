@@ -10,6 +10,12 @@ module.exports = {
       // gray: colors.sky,
       // blue: colors.blue,
       // white:colors.black,
+      green:{
+        700:'#00FF00'
+      },
+      red: {
+        700:'#FF0000'
+      },
       'white':{
         700:'#FFFFFF'
       },
