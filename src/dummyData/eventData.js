@@ -6,7 +6,7 @@ export const eventsData = [
         endDate: "29/08/2024",
         eventStatus: "open",
         formUrl:
-            "https://docs.google.com/forms/d/1jLR9L2pLJXYepb4ffC0iSKibM6mmnU8Pj64ZODs7ab8/edit",
+            "https://docs.google.com/forms/d/e/1FAIpQLSdp5ZS_v_nE5TVK-wwK-xUh8O8vnwE2VQ1gW7cIZKQHNGMwkA/viewform?usp=sf_link",
     },
     {
         id: "2",
@@ -15,7 +15,7 @@ export const eventsData = [
         endDate: "31/08/2024",
         eventStatus: "open",
         formUrl:
-            "https://docs.google.com/forms/d/1jLR9L2pLJXYepb4ffC0iSKibM6mmnU8Pj64ZODs7ab8/edit",
+            "https://docs.google.com/forms/d/e/1FAIpQLSdp5ZS_v_nE5TVK-wwK-xUh8O8vnwE2VQ1gW7cIZKQHNGMwkA/viewform?usp=sf_link",
     },
     {
         id: "3",
