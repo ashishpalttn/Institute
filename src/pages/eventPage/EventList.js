@@ -6,18 +6,23 @@ import { Box, Typography } from "@mui/material";
 import CircularProgressIndicator from "../../shared-components/CircularProgressIndicator";
 import { eventsData } from "../../dummyData/eventData";
 import { CustomCard } from "../../shared-components/CustomCard";
-
+import { getEventData } from '../../store/event';
+import { useNavigate } from 'react-router-dom';
+import EventCard from "../../shared-components/EventCard";
 
 
 const EventList = () => {
-    const [sheetData, setSheetData] = useState();
+    const [sheetData, setSheetData] = useState(null);
+    const [backendData, setBackendData] = useState(false);
+    const navigate = useNavigate()
     useEffect(() => {
         const fetchData = async () => {
-            const data = await getSheetDBData();
-            console.log(data);
+            const data = await getEventData();
+            // console.log(data);
             if (Array.isArray(data)) {
                 setSheetData(data);
             } else {
+                setBackendData(true)
                 setSheetData(eventsData);
             }
         };
@@ -25,8 +30,23 @@ const EventList = () => {
     }, []);
 
     const handleOnClick = (formUrl) => {
-        window.location.href = formUrl;
+        if (backendData) {
+            window.location.href = formUrl;
+        }
+       else{
+            navigate('/event-form')
+       }
     };
+
+    const handleRegister = (event) => {
+        if (backendData) {
+            window.location.href = event.formUrl;
+        }
+       else{
+            navigate('/event-form')
+       }
+      };
+
     const viewPortHeight = window.innerHeight;
     console.log(viewPortHeight);
 
@@ -35,36 +55,16 @@ const EventList = () => {
             {!sheetData ? (
                 <CircularProgressIndicator />
             ) : (
-                <Box>
-                <div className="flex justify-center">  <p className="text-3xl pb-4 mt-4">Event List</p></div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="p-6">
+                    <h1 className="text-2xl font-bold mb-4">Live Events</h1>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {sheetData?.map((event) => (
                         <CustomCard>
-                            <div
-                                onClick={() => handleOnClick(event.formUrl)}
-                                key={event.id}
-                                className="bg-white shadow-lg rounded-lg p-4"
-                            >
-                                <h2 className="text-xl font-semibold mb-2">{event.eventName}</h2>
-                                <p className="text-gray-600">Start Date: {event.startDate}</p>
-                                <p className="text-gray-600">End Date: {event.endDate}</p>
-                                <div className="flex  mt-2 gap-2">
-                                    <p className="text-green-600 flex gap-2 font-bold">
-                                        Event Status:
-                                        {event.eventStatus === "open" ? <div className="flex gap-2">
-                                            <div className="bg-green-700 w-3 h-3 mt-1.5 rounded-full"></div>
-                                            <p className="text-green-700">Active</p>
-                                        </div>
-                                            : <p className="text-red-700">Closed</p>
-                                        }
-                                    </p>
-
-                                </div>
-                            </div>
-                        </CustomCard>
+                         <EventCard key={event.id} event={event} onRegister={handleRegister} />
+                         </CustomCard>
                     ))}
                 </div>
-                </Box>
+                </div>
             )}
         </div>
     );

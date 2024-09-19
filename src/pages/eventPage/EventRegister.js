@@ -17,7 +17,7 @@ const registerEventFormData = [
   { name: 'endDate', label: 'End Date', type: 'date', required: true },
   { name: 'eventLogo', label: 'Event Logo URL' },
   { name: 'eventHead', label: 'Event Head', required: true },
-  { name: 'contactNumber', label: 'Contact Number', required: true },
+  { name: 'phoneNumber', label: 'Contact Number', required: true },
   { name: 'contactEmail', label: 'Contact Email ID', required: true },
 ];
 
@@ -29,7 +29,7 @@ const EventRegister = () => {
     endDate: '',
     eventLogo: '',
     eventHead: '',
-    contactNumber: '',
+    phoneNumber: '',
     contactEmail: '',
   });
 
@@ -60,7 +60,7 @@ const EventRegister = () => {
           endDate: '',
           eventLogo: '',
           eventHead: '',
-          contactNumber: '',
+          phoneNumber: '',
           contactEmail: '',
         });
       }
@@ -71,8 +71,9 @@ const EventRegister = () => {
   };
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container component="main" maxWidth="sm">
       <Box
+      className
         sx={{
           marginTop: 5,
           display: 'flex',

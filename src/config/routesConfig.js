@@ -13,6 +13,8 @@ import AdmissionPage from "../pages/admissionPage/AdmissionPage";
 import TeachersPage from "../pages/teachersPage/TeachersPage";
 import EventsPage from "../pages/eventPage/EventPage";
 import AlumniPage from "../pages/AlumniStudentPage";
+import EventFillFormPage from "../pages/eventPage/EventFillFormPage.js";
+
 
 
 export const router = createBrowserRouter([
@@ -72,6 +74,10 @@ export const router = createBrowserRouter([
       {
         path: '/alumni',
         element: <AlumniPage/>
+      },
+      {
+        path: '/event-form',
+        element: <EventFillFormPage/>
       }
     ],
   },
