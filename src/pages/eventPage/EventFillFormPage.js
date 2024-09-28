@@ -1,15 +1,24 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useLocation } from 'react-router-dom';
 
 const EventFillFormPage = () => {
+  const location = useLocation();
+  const {eventName,eventLogo,instituteName} = location.state.event || {};
   const [formData, setFormData] = useState({
     studentName: '',
     studentClass: '',
     mobileNo: '',
     email: '',
-    guardianName: "3Jane Doe",
-    shortNote: ''
+    guardianName: "Unknown",
+    shortNote: '',
+    eventName:eventName,
+    instituteName: instituteName
   });
+
+
+
+
 
   // Array of form fields to generate the form dynamically
   const formFields = [
@@ -38,7 +47,9 @@ const EventFillFormPage = () => {
           studentClass: '',
           mobileNo: '',
           email: '',
-          shortNote: ''
+          shortNote: '',
+          eventName:'temp',
+          instituteName:''
         })
       }
     }
@@ -51,18 +62,18 @@ const EventFillFormPage = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">
       {/* Image Banner */}
-      <div className="w-full h-64">
+      <div className="w-full h-80">
         <img
-          src="https://via.placeholder.com/1920x300"
+          src={eventLogo? eventLogo : "https://via.placeholder.com/1920x300"}
           alt="Banner"
           className="w-full h-full object-cover"
         />
       </div>
 
       {/* Form Section */}
-      <div className="flex-grow p-8 flex items-center justify-center">
-        <div className="bg-white shadow-lg rounded-lg p-8 max-w-lg w-full">
-          <h2 className="text-2xl font-bold mb-6 text-center">Event Registration</h2>
+      <div className=" flex-grow p-8 mt-[-150px] flex items-center justify-center">
+        <div className="bg-white-700 shadow-lg rounded-lg p-8 max-w-3xl w-full">
+          <h2 className="text-3xl font-bold mb-6 text-center">Registration for {eventName}</h2>
           
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Dynamically Generated Form Fields */}
@@ -95,7 +106,7 @@ const EventFillFormPage = () => {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full bg-primary-700 text-white py-2 rounded-md hover:bg-sky-600 transition duration-300"
+              className="w-full bg-primary-600 text-white py-2 rounded-md hover:bg-primary-500 transition duration-300"
             >
               Submit
             </button>

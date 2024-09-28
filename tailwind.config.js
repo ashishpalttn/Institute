@@ -32,6 +32,47 @@ module.exports = {
         900:'#0c4a6e',
         950:'#082f49'//header and footer
       },
+      'yellow':{
+        50: '#fffbea',
+        100: '#fff3c4',
+        200: '#fce588',
+        300: '#fadb5f',
+        400: '#f7c948',
+        500: '#f0b429',
+        600: '#de911d',
+        700: '#cb6e17',
+        800: '#b44d12',
+        900: '#8d2b0b',
+        950: '#7a3410',  // deeper yellow-orange tone
+      },
+      'green': {
+        50: '#f0fdf4',
+        100: '#dcfce7',
+        200: '#bbf7d0',
+        300: '#86efac',
+        400: '#4ade80',
+        500: '#22c55e',
+        600: '#16a34a',
+        700: '#15803d',
+        800: '#166534',
+        900: '#14532d',
+        950: '#064e3b',  // deeper green tone
+      },
+      'gray': {
+        50:  '#f9fafb',   // very light gray
+        100: '#f3f4f6',   // light gray
+        200: '#e5e7eb',   // soft gray
+        300: '#d1d5db',   // neutral gray
+        400: '#9ca3af',   // medium gray
+        500: '#6b7280',   // standard gray
+        600: '#4b5563',   // darker gray
+        700: '#374151',   // dark gray
+        800: '#1f2937',   // very dark gray
+        900: '#111827',   // near-black gray
+        950: '#0b0f18',   // deepest gray tone, almost black
+      },
+
+
       // secondary:{
 
       // },
