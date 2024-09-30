@@ -7,7 +7,7 @@ export const headerData = {
         {name:"Teachers", url:'/teachers', icon:'about'},
         {name:"Results", url:'/result', icon:'home'},
         {name:"Gallery", url:'/gallery', icon:'home'},
-        {name:"Blog", url:'/blog', icon:'home'}, 
+        // {name:"Blog", url:'/blog', icon:'home'}, 
         {name:"Branches", url:'/branches', icon:'home'},
         {name:"Alumni", url:'/alumni', icon:'home'},
         {name:"Admission",url:'/admission', icon:'home'},

@@ -17,6 +17,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { headerData } from "../../dummyData/headerData";
 import MailIcon from "@mui/icons-material/Mail";
 import ThemeToggle from "../ThemeToggleBtn";
+import EventAvailableIcon from '@mui/icons-material/EventAvailable';
+import NotificationsIcon from '@mui/icons-material/Notifications';
 import LanguageSwitcher from "../LanguageSwitcher";
 import { getEventData } from "../../store/event";
 
@@ -98,8 +100,11 @@ const NavBar = ({ handleDrawerToggle }) => {
           {renderNavItems(headerData.navItems, AnimatedButton, Link)}
         </Box>
         <LanguageSwitcher/>
+        <Badge className="mr-4" onClick={()=>navigate('./event')} badgeContent={1} color="primary">
+            <NotificationsIcon color="white" />
+          </Badge>
         <Badge onClick={()=>navigate('./event')} badgeContent={liveEventCount} color="primary">
-            <MailIcon color="white" />
+            <EventAvailableIcon color="white" />
           </Badge>
       </Toolbar>
     </AppBar>
