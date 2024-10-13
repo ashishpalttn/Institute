@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useLocation } from 'react-router-dom';
+import handlePayment from '../../shared-components/RazorpayComponent';
+import { FormControlLabel, Radio, RadioGroup, Typography } from '@mui/material';
 
 const EventFillFormPage = () => {
   const location = useLocation();
-  const {eventName,eventLogo,instituteName} = location.state.event || {};
+  const {eventName,eventLogo,instituteName,fee} = location.state.event || {};
   const [formData, setFormData] = useState({
     studentName: '',
     studentClass: '',
@@ -13,11 +15,9 @@ const EventFillFormPage = () => {
     guardianName: "Unknown",
     shortNote: '',
     eventName:eventName,
-    instituteName: instituteName
+    instituteName: instituteName,
+    feeMethod:'online'
   });
-
-
-
 
 
   // Array of form fields to generate the form dynamically
@@ -38,6 +38,15 @@ const EventFillFormPage = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // if(formData.feeMethod==='online'){
+    //   try{
+    //     const response = await handlePayment(1);
+    //   }
+    //   catch(error){
+    //     alert("Error", error);
+    //   }
+    // }
+
     try{
       const response = await axios.post(`${process.env.REACT_APP_API_URL}/event-registration/registrations`,formData);
       if(response.status===201){
@@ -102,13 +111,25 @@ const EventFillFormPage = () => {
                 )}
               </div>
             ))}
-
-            {/* Submit Button */}
+            {fee >0 && <div className='text-gray-600 mt-2'>
+            <Typography>Choose Payment Method: </Typography>
+                <RadioGroup
+                row
+                name="feeMethod"
+                value={formData?.feeMethod}
+                onChange={handleInputChange}
+                sx={{ mb: 1 }}
+              >
+                <FormControlLabel value="online" control={<Radio />} label="Online" />
+                <FormControlLabel value="offline" control={<Radio />} label="Offline" />
+              </RadioGroup>
+              <Typography>Fee:   ₹{fee} </Typography>
+          </div>}
             <button
               type="submit"
               className="w-full bg-primary-600 text-white py-2 rounded-md hover:bg-primary-500 transition duration-300"
             >
-              Submit
+            {fee>0 && formData?.feeMethod === 'online' ? 'Register Event with Online Payment': fee>0 && formData?.feeMethod==='offline'? 'Register Event with Offline Payment': 'Register for Event'} 
             </button>
           </form>
         </div>

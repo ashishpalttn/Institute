@@ -1,29 +1,32 @@
 // src/components/EventCard.js
 import React from 'react';
+import greenDot from '../assets/green-dot.gif'
+import yellowDot from '../assets/yellow-dot.gif'
+import redDot from '../assets/red-dot.gif'
 
 const GetStatusWithColor = ({event, isLive, isUpcomming, isClosed})=>{
   return(
     <div className="flex items-center">
   <span className="mr-2">Event Status:</span>
+  <img src={isLive? greenDot:isUpcomming? yellowDot: isClosed?redDot:null} className={isLive? 'w-7 h-7':isUpcomming? 'w-4 h-4': isClosed?'w-7 h-7':null} alt="GIF description" loading="lazy"></img>
   <div className="flex items-center">
-    <div
+    {/* <div
       className={`w-4 h-4 rounded-full mx-1 ${
-        isLive
-        ? 'bg-green-700 '
-        : isUpcomming
+  
+        isUpcomming
         ? 'bg-yellow-500'
         : isClosed
         ? 'bg-red-700'
-        : 'bg-gray-400'
+        : null
       }`}
       aria-label={`Event status is ${event.eventStatus}`} // Accessibility improvement
-    ></div>
+    ></div> */}
     <span
       className={`text-gray-600 px-1 font-bold rounded-sm ${
           isLive
           ? 'text-green-700 '
           : isUpcomming
-          ? 'text-yellow-500'
+          ? 'text-yellow-300'
           : isClosed
           ? 'text-red-700'
           : 'text-gray-400' // Default text color if status is neither
