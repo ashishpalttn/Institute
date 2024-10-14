@@ -16,8 +16,18 @@ module.exports = {
       red: {
         700:'#FF0000'
       },
-      'white':{
-        700:'#FFFFFF'
+        'white': {
+          50: 'rgba(255, 255, 255, 0.5)', // Represents 50% opacity
+          100: '#f9fafb', // Very light gray (off-white)
+          200: '#f3f4f6', // Slightly darker off-white
+          300: '#e5e7eb', // Light gray
+          400: '#d1d5db', // Mid-light gray
+          500: '#9ca3af', // Mid-gray
+          600: '#6b7280', // Darker gray
+          700: '#ffffff', // Even darker gray
+          800: '#374151', // Dark gray
+          900: '#1f2937', // Near black
+          950: '#111827'  // Very dark gray
       },
       'primary':{
         50:'#f0f9ff',

@@ -50,13 +50,13 @@ useEffect(() => {
       <RenderImage item={data[currentIndex]} index={currentIndex} />
       <button
         onClick={handlePrev}
-        className="absolute top-1/2 left-2  ease-out duration-500 y-1/2 bg-white/50 text-gray-800 px-2 py-2 rounded-full hover:bg-white"
+        className="absolute top-1/2 left-2  ease-out duration-500 y-1/2 bg-white-50 hover:bg-white-700 text-gray-800 px-2 py-2 rounded-full hover:bg-white"
       >
         <ChevronLeftIcon />
       </button>
       <button
         onClick={handleNext}
-        className="absolute top-1/2 right-3  bg-white/50 text-gray-800 px-2 py-2 rounded-full hover:bg-white"
+        className="absolute top-1/2 right-3  bg-white-50 hover:bg-white-700  text-gray-800 px-2 py-2 rounded-full hover:bg-white"
       >
         <ChevronRightIcon />
       </button>
@@ -64,9 +64,9 @@ useEffect(() => {
         {data?.map((item, index) => (
           <button onClick={() => setCurrentIndex(index)}>
             <div
-              class={`transition-all bg-white/50 px-4 mx-1 rounded-full text-red-800 w-2 h-2 ${
+              class={`transition-all bg-white-50 px-4 mx-1 rounded-full text-red-800 w-2 h-2 ${
                 index === currentIndex
-                  ? "bg-indigo-500 drop-shadow-2xl "
+                  ? "bg-white-500 "
                   : "bg-opacity-50"
               }`}
             ></div>
