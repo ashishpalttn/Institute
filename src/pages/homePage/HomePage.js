@@ -9,22 +9,25 @@ import { getSheetDBData } from "../../dummyData/sheetDb/sheetDb";
 
 
 const HomePage = () => {
-  useEffect(()=>{
-    // getSheetDBData()
-  },[])
   const {t} = useTranslation();
   return (
     <div className="bg-primary-50 pb-2">
-      <CarouselComponent
-        data={homePageData.carouselData}
-        autoSlide={true}
-        autoSlideInterval={3000}
-      />
-      <div className="container mx-auto px-4">
+      <div className="w-full">
+          <CarouselComponent autoSlide={true} autoSlideInterval={3000}>
+            {homePageData.carouselData.map((img) => (
+              <div className="w-full flex-shrink-0">
+                <img
+                  className="w-full h-[12rem] lg:h-[32rem] object-cover rounded-xl"
+                  src={img.image}
+                  alt="Carousel Slide"
+                />
+              </div>
+            ))}
+          </CarouselComponent>
+        </div>
+      <div className="container mx-auto px-16">
+   
         <header className="text-center mb-12">
-          <h1 className="text-3xl lg:text-5xl font-bold mb-4">
-            Welcome to ABC Coaching Center
-          </h1>
           <h1 className="text-3xl lg:text-5xl font-bold mb-4">
             {t('welcome')}
           </h1>
