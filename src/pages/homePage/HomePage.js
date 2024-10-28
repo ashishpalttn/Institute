@@ -1,11 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { CarouselComponent } from "../../shared-components/carousel/CarouselComponent";
 import { homePageData } from "../../dummyData/homePageData";
 import Section from "../../shared-components/Section";
 import { CustomCard } from "../../shared-components/CustomCard";
-import CoursesPage, { RenderCourses } from "../courses/CoursesPage";
+import { RenderCourses } from "../courses/CoursesPage";
 import { useTranslation } from "react-i18next";
-import { getSheetDBData } from "../../dummyData/sheetDb/sheetDb";
 
 
 const HomePage = () => {
@@ -17,7 +16,7 @@ const HomePage = () => {
             {homePageData.carouselData.map((img) => (
               <div className="w-full flex-shrink-0">
                 <img
-                  className="w-full h-[12rem] lg:h-[32rem] object-cover rounded-xl"
+                  className="w-full h-[12rem] lg:h-[32rem] object-cover" //add border radious here
                   src={img.image}
                   alt="Carousel Slide"
                 />
@@ -25,16 +24,16 @@ const HomePage = () => {
             ))}
           </CarouselComponent>
         </div>
-      <div className="container mx-auto px-16">
+      <div className="container lg:px-20 mx-auto px-2">
    
-        <header className="text-center mb-12">
+        {/* <header className="text-center mb-12">
           <h1 className="text-3xl lg:text-5xl font-bold mb-4">
             {t('welcome')}
           </h1>
           <p className="text-lg text-gray-700">
             Empowering students to achieve their academic goals.
           </p>
-        </header>
+        </header> */}
 
         <Section title="Our Courses">
           <RenderCourses/>

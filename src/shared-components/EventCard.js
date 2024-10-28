@@ -10,17 +10,6 @@ const GetStatusWithColor = ({event, isLive, isUpcomming, isClosed})=>{
   <span className="mr-2">Event Status:</span>
   <img src={isLive? greenDot:isUpcomming? yellowDot: isClosed?redDot:null} className={isLive? 'w-7 h-7':isUpcomming? 'w-4 h-4': isClosed?'w-7 h-7':null} alt="GIF description" loading="lazy"></img>
   <div className="flex items-center">
-    {/* <div
-      className={`w-4 h-4 rounded-full mx-1 ${
-  
-        isUpcomming
-        ? 'bg-yellow-500'
-        : isClosed
-        ? 'bg-red-700'
-        : null
-      }`}
-      aria-label={`Event status is ${event.eventStatus}`} // Accessibility improvement
-    ></div> */}
     <span
       className={`text-gray-600 px-1 font-bold rounded-sm ${
           isLive
@@ -69,7 +58,7 @@ const EventCard = ({ event, onRegister }) => {
       <GetStatusWithColor event={event} isLive={isLive} isUpcomming={isUpcomming} isClosed={isClosed}/>
       <button
           onClick={() => isLive && onRegister(event)}
-          className={`mt-4 px-4 py-2 rounded text-white ${
+          className={`mt-4 px-4 py-2 rounded text-white-700 ${
             isLive
               ? 'bg-primary-700 hover:bg-primary-600 cursor-pointer' // Enabled styles
               : 'bg-gray-400 cursor-not-allowed' // Disabled styles

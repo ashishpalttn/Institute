@@ -10,7 +10,7 @@ export const LandingPage = (props) => {
     <Box sx={{ display: "block" }}>
       <CssBaseline />
       <Header />
-      <Box component="main" sx={{ p: 3 ,display:'block'}}>
+      <Box component="main" sx={{ p: 0 ,display:'block'}}>
         <Toolbar />
         <Outlet/>
       </Box>

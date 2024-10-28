@@ -2,9 +2,12 @@ import React, { useEffect, useState } from "react";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import testVideo from "../../assets/videos/testVideo.mp4"
+import { useTranslation } from "react-i18next";
+
 
 
 export function CarouselComponent({ children: slides, autoSlide = false, autoSlideInterval = 3000 }) {
+  const {t} = useTranslation()
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handlePrev = () => {
@@ -27,7 +30,7 @@ export function CarouselComponent({ children: slides, autoSlide = false, autoSli
   }, [autoSlide, autoSlideInterval]);
 
   return (
-    <div className="overflow-hidden rounded-xl relative mb-8 ">
+    <div className="overflow-hidden relative mb-8 ">
       <div
         className="flex transition-transform ease-out duration-300"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -40,6 +43,14 @@ export function CarouselComponent({ children: slides, autoSlide = false, autoSli
       >
         <ChevronLeftIcon />
       </button>
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-gray-300">
+        <h1 className="text-3xl lg:text-5xl font-bold mb-4">
+          {t('welcome')}
+        </h1>
+        <p className="text-lg ">
+          Empowering students to achieve their academic goals.
+        </p>
+      </div>
       <button
         onClick={handleNext}
         className="absolute top-1/2 right-3 bg-white-50 hover:bg-white-700 text-gray-800 px-2 py-2 rounded-full"
