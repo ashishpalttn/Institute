@@ -16,7 +16,7 @@ const HomePage = () => {
             {homePageData.carouselData.map((img) => (
               <div className="w-full flex-shrink-0">
                 <img
-                  className="w-full h-[12rem] lg:h-[32rem] object-cover" //add border radious here
+                  className="w-full h-[12rem] lg:h-[32rem] opacity-90 object-cover" //add border radious here
                   src={img.image}
                   alt="Carousel Slide"
                 />

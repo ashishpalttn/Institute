@@ -49,7 +49,7 @@ const EventRegister = () => {
         //   );
       const response = await axios.post(
         `${process.env.REACT_APP_API_URL}/api/events`,
-        formValues
+        formValues,{withCredentials:true}
       );
       if (response.status === 201) {
         alert('Event registered successfully!');

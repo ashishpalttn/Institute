@@ -39,11 +39,11 @@ export function CarouselComponent({ children: slides, autoSlide = false, autoSli
       </div>
       <button
         onClick={handlePrev}
-        className="absolute top-1/2 left-2 bg-white-50 hover:bg-white-700 text-gray-800 px-2 py-2 rounded-full"
+        className="absolute top-1/2 left-4 bg-primary-700 hover:bg-primary-500 text-gray-800 px-2 py-2 rounded-full"
       >
         <ChevronLeftIcon />
       </button>
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-gray-300">
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-primary-800">
         <h1 className="text-3xl lg:text-5xl font-bold mb-4">
           {t('welcome')}
         </h1>
@@ -53,7 +53,7 @@ export function CarouselComponent({ children: slides, autoSlide = false, autoSli
       </div>
       <button
         onClick={handleNext}
-        className="absolute top-1/2 right-3 bg-white-50 hover:bg-white-700 text-gray-800 px-2 py-2 rounded-full"
+        className="absolute top-1/2 right-4 bg-primary-700 hover:bg-primary-500 text-gray-800 px-2 py-2 rounded-full"
       >
         <ChevronRightIcon />
       </button>
@@ -63,8 +63,8 @@ export function CarouselComponent({ children: slides, autoSlide = false, autoSli
           <div
             class={`transition-all bg-white-50 px-4 mx-1 rounded-full text-red-800 w-2 h-2 ${
               index === currentIndex
-                ? "bg-white-700 "
-                : "bg-opacity-50"
+                ? "bg-primary-500 "
+                : "bg-primary-800"
             }`}
           ></div>
         </button>

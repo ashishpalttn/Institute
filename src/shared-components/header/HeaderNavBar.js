@@ -21,6 +21,7 @@ import EventAvailableIcon from '@mui/icons-material/EventAvailable';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import LanguageSwitcher from "../LanguageSwitcher";
 import { getEventData } from "../../store/event";
+import MyImage from "../../assets/svmLogo.png";
 
 
 
@@ -80,10 +81,15 @@ const NavBar = ({ handleDrawerToggle }) => {
         >
           <MenuIcon />
         </IconButton>
-        <img
+        {/* <img
           src={`${process.env.PUBLIC_URL}${headerData.logo}`}
           className="w-7 h-7 mr-2"
-          alt="Logo"
+          alt="logo"
+        /> */}
+          <img
+          src={MyImage}
+          className="w-10 h-10 mr-2 rounded-3xl"
+          alt="logo"
         />
 
         <Typography

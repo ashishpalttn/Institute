@@ -90,7 +90,18 @@ module.exports = {
 
       // }
     },
-    extend: {},
+    extend: {
+      animation: {
+        "spin-slow": "spin 4s linear infinite", // Slow spin animation
+        "fade-in": "fadeIn 1s ease-in forwards", // Fade-in animation
+      },
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
+        },
+      },
+    },
   },
   plugins: [],
 }

@@ -1,9 +1,11 @@
 import React from "react";
+import Heading from "./Heading";
+
 
 const Section = ({ title, children }) => {
   return (
     <section className="mb-12">
-      <h2 className="text-4xl font-semibold mb-6 text-center">{title}</h2>
+      <Heading level={1} text={title} align="center" className="my-4 text-3xl font-bold rounded-3xl bg-primary-700 text-white-700" icon="📘" />
       {children}
     </section>
   );
